@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Vowels</title>
+</head>
+<body>
+    <script>
+        // Function to count vowels in a string 1st way
+        function countVowels(str) {
+            str = str.toLowerCase();
+            const vowels = 'aeiou';
+            let count = 0;
+
+            for(let char of characters) {
+                if(vowels.includes(char)) {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        const inputString = "Hello World";
+        const vowelcount = countVowels(inputString);
+        console.log('The number of vowels in the string is :' + vowelcount);
+
+        // Example usage
+        const exampleString = "This is an example string.";
+        const exampleVowelCount = countVowels(exampleString);
+        console.log(`The number of vowels in "${exampleString}" is: ${exampleVowelCount}`);
+
+        // Function to count vowels in a string 2nd way
+        function countVowels2(str) {
+            const vowels = 'aeiou';
+            return Array.from(str.toLowerCase())
+            .reduce((count, char) => {
+                return count + (vowels.includes(char) ? 1 : 0);
+            }, 0);
+        }
+        const inputString2 = "Hello World";
+        const vowelCount2 = countVowels2(inputString2);
+
+        console.log('The number of vowels in the string is :' + vowelCount2);
+
+        // Example usage
+        const exampleString2 = "This is another example string.";
+        const exampleVowelCount2 = countVowels2(exampleString2);
+        console.log(`The number of vowels in "${exampleString2}" is: ${exampleVowelCount2}`);
+
+        // Function to count vowels in a string 3rd way
+        function countVowels3(str) {
+            const vowels = 'aeiou';
+            return str.toLowerCase().split('').filter(char => vowels.includes(char)).length;
+        }
+
+        const inputString3 = "Hello World";
+        const vowelCount3 = countVowels3(inputString3);
+
+        console.log('The number of vowels in the string is :' + vowelCount3);
+        // Example usage
+        const exampleString3 = "This is yet another example string.";
+        const exampleVowelCount3 = countVowels3(exampleString3);
+
+        console.log(`The number of vowels in "${exampleString3}" is: ${exampleVowelCount3}`);
+
+        
+    </script>
+</body>
+</html>
